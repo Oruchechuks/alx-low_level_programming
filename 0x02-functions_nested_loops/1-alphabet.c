@@ -3,21 +3,17 @@
 
 
 /**
+ * main - check the code
  *
- *  * main - check the code
- *
- *   *
- *
- *    * Return: Always 0.
- *
- *     */
+ * Return: Always 0.
+ */
 
-int main(void)
-
+void print_alphabet(void);
 {
-
-	    print_alphabet();
-
-	        return (0);
-
+int int j;
+for (j = 'a'; j <= 'z'; j++)
+{
+_putchar(j);
 }
+
+_putchar(\n);
