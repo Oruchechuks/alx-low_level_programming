@@ -27,4 +27,4 @@ if (c == lower || c == upper)
 }
 
 return (isletter);
-
+}
