@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * _strcpy - Copies of a string pointed to by @src, including the 
+ * _strcpy - Copies of a string pointed to by @src, including the
  * terminating null byte, to a buffer pointed to by @dest.
  * @dest:A buffer to copy the string to.
  * @src: A source string to copy.
  *
  * Return: Apointer to the direction string @dest.
  */
-char *_strcpy (char *dest, char *src)
+char *_strcpy(char *dest, char *src)
 {
 	int index = 0;
 
