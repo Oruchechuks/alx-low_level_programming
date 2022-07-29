@@ -2,15 +2,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
-
 int find_len(char *str);
 char *create_xarray(int size);
 char *iterate_zeroes(char *str);
 void get_prod(char *prod, char *mult, int digit, int zeroes);
 void add_nums(char *final_prod, char *next_prod, int next_len);
-
-
 
 /**
  * find_len - Finds the length of a string.
@@ -20,7 +16,6 @@ void add_nums(char *final_prod, char *next_prod, int next_len);
  */
 
 int find_len(char *str)
-
 {
 	int len = 0;
 
@@ -28,10 +23,7 @@ int find_len(char *str)
 		len++;
 
 	return (len);
-
 }
-
-
 
 /**
  * create_xarray - Creates an array of chars and initializes it with
@@ -44,7 +36,6 @@ int find_len(char *str)
  */
 
 char *create_xarray(int size)
-
 {
 	char *array;
 	int index;
@@ -60,10 +51,7 @@ char *create_xarray(int size)
 	array[index] = '\0';
 
 	return (array);
-
 }
-
-
 
 /**
  * iterate_zeroes - Iterates through a string of numbers containing
@@ -74,15 +62,12 @@ char *create_xarray(int size)
  */
 
 char *iterate_zeroes(char *str)
-
 {
 	while (*str && *str == '0')
 		str++;
 
 	return (str);
-
 }
-
 
 /**
  * get_digit - Converts a digit character to a corresponding int.
@@ -94,7 +79,6 @@ char *iterate_zeroes(char *str)
  */
 
 int get_digit(char c)
-
 {
 	int digit = c - '0';
 
@@ -105,10 +89,7 @@ int get_digit(char c)
 	}
 
 	return (digit);
-
 }
-
-
 
 /**
  * get_prod - Multiplies a string of numbers by a single digit.
@@ -157,15 +138,9 @@ void get_prod(char *prod, char *mult, int digit, int zeroes)
 
 	}
 
-
-
 	if (tens)
-
 		*prod = (tens % 10) + '0';
-
 }
-
-
 
 /**
  * add_nums - Adds the numbers stored in two strings.
@@ -175,23 +150,17 @@ void get_prod(char *prod, char *mult, int digit, int zeroes)
  */
 
 void add_nums(char *final_prod, char *next_prod, int next_len)
-
 {
-
 	int num, tens = 0;
 
 	while (*(final_prod + 1))
-
 		final_prod++;
 
 	while (*(next_prod + 1))
-
 		next_prod++;
 
 	for (; *final_prod != 'x'; final_prod--)
-
 	{
-
 		num = (*final_prod - '0') + (*next_prod - '0');
 		num += tens;
 		*final_prod = (num % 10) + '0';
@@ -199,13 +168,9 @@ void add_nums(char *final_prod, char *next_prod, int next_len)
 
 		next_prod--;
 		next_len--;
-
 	}
 
-
-
 	for (; next_len >= 0 && *next_prod != 'x'; next_len--)
-
 	{
 		num = (*next_prod - '0');
 		num += tens;
@@ -214,18 +179,11 @@ void add_nums(char *final_prod, char *next_prod, int next_len)
 
 		final_prod--;
 		next_prod--;
-
 	}
 
-
-
 	if (tens)
-
 		*final_prod = (tens % 10) + '0';
-
 }
-
-
 
 /**
  * main - Multiplies two positive numbers.
@@ -238,7 +196,6 @@ void add_nums(char *final_prod, char *next_prod, int next_len)
  */
 
 int main(int argc, char *argv[])
-
 {
 	char *final_prod, *next_prod;
 	int size, index, digit, zeroes = 0;
@@ -280,5 +237,4 @@ int main(int argc, char *argv[])
 	free(final_prod);
 
 	return (0);
-
 }
